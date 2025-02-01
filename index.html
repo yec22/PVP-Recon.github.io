@@ -1,1 +1,324 @@
-Hello World!
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+    content="PVP-Recon: Progressive View Planning via Warping Consistency for Sparse-View Surface Reconstruction">
+  <meta name="keywords" content="Neural surface reconstruction, Sparse views, Adaptive view planning">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PVP-Recon: Progressive View Planning via Warping Consistency for Sparse-View Surface Reconstruction</title>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SWYTWD3QEX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-SWYTWD3QEX');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+
+<body>
+
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+    <div class="navbar-menu">
+      <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            More Research
+          </a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="https://diffposetalk.github.io/">
+              DiffPoseTalk
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-body" style="padding-top: 2em;">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">PVP-Recon: Progressive View Planning via Warping Consistency for Sparse-View Surface Reconstruction</h1>
+            <div class="is-size-3 publication-venue">
+              SIGGRAPH Asia 2024 (Journal)
+            </div>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                Sheng Ye<sup>1</sup>,
+              </span>
+              <span class="author-block">
+                Yuze He<sup>1</sup>,
+              </span>
+              <span class="author-block">
+                Matthieu Lin<sup>1</sup>,
+              </span>
+              <span class="author-block">
+                Jenny Sheng<sup>1</sup>,
+              </span>
+              <span class="author-block">
+                Ruoyu Fan<sup>1</sup>,
+              </span>
+              <span class="author-block">
+                Yiheng Han<sup>2</sup>,
+              </span>
+              <span class="author-block">
+                Yubin Hu<sup>1</sup>,
+              </span>
+              <span class="author-block">
+                Ran Yi<sup>3</sup>,
+              </span>
+              <span class="author-block">
+                Yu-Hui Wen<sup>4</sup>,
+              </span>
+              <span class="author-block">
+                Yong-Jin Liu<sup>1</sup>,
+              </span>
+              <span class="author-block">
+                Wenping Wang<sup>5</sup>
+              </span>
+            </div>
+
+            <div class="is-size-6 publication-affiliations">
+              <span><sup>1</sup> Tsinghua University</span>
+              <span><sup>2</sup> Beijing University of Technology</span>
+              <span><sup>3</sup> Shanghai Jiao Tong University</span>
+            </div>
+
+            <div class="is-size-6 publication-affiliations">
+              <span><sup>4</sup> Beijing Jiaotong University</span>
+              <span><sup>5</sup> Texas A&M University</span>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- arXiv Link. -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/2409.05474" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+                <!-- Paper Link. -->
+                <span class="link-block">
+                  <a href="./TOG Paper.pdf"
+                   class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="far fa-newspaper"></i>
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+                <!-- Video Link. -->
+                <span class="link-block">
+                  <a href="https://www.youtube.com/watch?v=ukr0jnghZQY" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                    </span>
+                    <span>Video</span>
+                  </a>
+                </span>
+                <!-- Code Link. -->
+                <!-- <span class="link-block">
+                  <a href="https://github.com/DiffPoseTalk/DiffPoseTalk"
+                   class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                        <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span> -->
+                <!-- Appendix Link. -->
+                <span class="link-block">
+                  <a href="./TOG Appendix.pdf"
+                   class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="far fa-newspaper"></i>
+                    </span>
+                    <span>Appendix</span>
+                  </a>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hero is-light is-small teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <img src="./static/images/teaser.png" alt="teaser">
+        <h3 class="subtitle has-text-centered">
+          We present <em>PVP-Recon</em>, 
+          a novel system that uses warping consistency to progressively determine the most informative views as input for surface reconstruction. 
+          <em>PVP-Recon</em> produces high-quality mesh surfaces with a constrained budget on the number of input views.
+        </h3>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              Neural implicit representations have revolutionized dense multi-view surface reconstruction, yet their performance significantly diminishes with sparse input views. 
+              A few pioneering works have sought to tackle this challenge by leveraging additional geometric priors or multi-scene generalizability. However, they are still hindered by the imperfect choice of input views, using images under empirically determined viewpoints.
+              We propose <em>PVP-Recon</em>, a novel and effective sparse-view surface reconstruction method that progressively plans the next best views to form an optimal set of sparse viewpoints for image capturing. 
+              <em>PVP-Recon</em> starts initial surface reconstruction with as few as 3 views and progressively adds new views which are determined based on a novel warping score that reflects the information gain of each newly added view. 
+              This progressive view planning progress is interleaved with a neural SDF-based reconstruction module that utilizes multi-resolution hash features, enhanced by a progressive training scheme and a directional Hessian loss. 
+              Quantitative and qualitative experiments on three benchmark datasets show that our system achieves high-quality reconstruction with a constrained input budget and outperforms existing baselines.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!--/ Abstract. -->
+
+      <!-- Method. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Method</h2>
+          <img src="./static/images/pipeline.png" alt="pipeline">
+          <h3 class="subtitle has-text-centered">
+            Overview of our proposed system.
+          </h3>
+          <div class="content has-text-justified">
+            <p>
+              We propose <em>PVP-Recon</em>, 
+              a novel system consisting of a view planning module and a reconstruction module, 
+              to reconstruct high-quality object surfaces from a sparse set of RGB images. 
+              Specifically, the view planning module uses a warping-based strategy to determine the most informative viewpoint for subsequent image capture. 
+              The reconstruction module adopts a <b>progressive hash encoding</b> as the geometric representation, facilitated by a novel <b>directional Hessian loss</b>, for reconstructing high-quality object surfaces.
+            </p>
+            <p>
+              We assume that view planning and surface reconstruction are mutually reinforcing. 
+              The newly acquired image from the view planning module is supplemented to the reconstruction module to help its optimization of recovering 3D surfaces. 
+              In turn, the reconstruction module provides current optimization status to guide the view planning module to make further planning decisions.
+              We alternately plan subsequent input views and optimize the mesh surface, trying to achieve the best reconstruction results with a few images.
+            </p>
+        </div>
+      </div>
+      <!--/ Method. -->
+    </div>
+
+    <!-- Results. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Results</h2>
+        <img src="./static/images/prog.png" alt="pipeline">
+        <h4 class="subtitle has-text-centered">
+          We show how the reconstructed mesh of BlendedMVS Sculpture changes as new input views are progressively added.
+        </h4>
+        <img src="./static/images/mesh_comp.png" alt="pipeline">
+        <h4 class="subtitle has-text-centered">
+          Comparisons of surface reconstruction on DTU and BlendedMVS datasets. Our method generates the most accurate and detailed results.
+        </h4>
+        <img src="./static/images/view_comp.png" alt="pipeline">
+        <h4 class="subtitle has-text-centered">
+          We visualize the selected cameras, corresponding RGB inputs, and final recovered meshes of different view planning strategies.
+        </h4>
+    </div>
+    <!--/ Results. -->
+  </div>
+  </section>
+
+  <section class="hero is-light is-small">
+    <div class="container is-max-desktop" style="width: 100%;">
+      <div class="hero-body">
+        <!-- Paper video. -->
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-3">Video</h2>
+            <div class="publication-video">
+              <iframe src="https://www.youtube.com/embed/ukr0jnghZQY?rel=0&amp;showinfo=0" frameborder="0"
+                allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            </div>
+          </div>
+        </div>
+        <!--/ Paper video. -->
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>@article{ye2024pvp,
+  title={PVP-Recon: Progressive View Planning via Warping Consistency for Sparse-View Surface Reconstruction},
+  author={Ye, Sheng and He, Yuze and Lin, Matthieu and Sheng, Jenny and Fan, Ruoyu and Han, Yiheng and Hu, Yubin and Yi, Ran and Wen, Yu-Hui and Liu, Yong-Jin and others},
+  journal={ACM Transactions on Graphics (TOG)},
+  volume={43},
+  number={6},
+  pages={1--13},
+  year={2024},
+  publisher={ACM New York, NY, USA}
+}</code></pre>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <!-- <div class="content has-text-centered">
+        <a class="icon-link" href="./static/videos/nerfies_paper.pdf">
+          <i class="fas fa-file-pdf"></i>
+        </a>
+        <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
+          <i class="fab fa-github"></i>
+        </a>
+      </div> -->
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              This website is licensed under a <a rel="license"
+                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+                Commons Attribution-ShareAlike 4.0 International License</a>.
+            </p>
+            <p>
+              The website source code is based on the <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>
+              project page.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>
